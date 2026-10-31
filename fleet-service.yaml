@@ -1,0 +1,17 @@
+# fleet-service.yaml — this app's deploy declaration. The fleet reads it when it provisions
+# the app: the name and port below, how secrets are wired, and per-environment overrides.
+# Filled in by the fleet for the "nextjs" stack pack — edit freely, it is your file.
+
+name: "landing-page-app"
+port: 3000            # what the container listens on — keep it equal to EXPOSE in the Dockerfile and PORT in fleet.conf
+
+# disabled: the deployment mounts no Secret, so a fresh app starts without one.
+# Change it to "reference" once the app has secrets stored in the cluster (the deployment
+# then reads them from the app's Secret), or "create" to have the chart render the Secret
+# itself.
+secrets: disabled
+
+# Per-environment overrides, keyed by environment name (production, beta). Empty means
+# every environment takes the fleet's defaults. An entry needs a "ref" (the git ref that
+# environment tracks) and may carry an "ingress" with a "host" to pin the app's hostname.
+environments: {}
