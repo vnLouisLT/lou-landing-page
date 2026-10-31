@@ -35,14 +35,16 @@ export function Perk({ id, name, stat, body }: PerkData) {
       >
         {stat}
       </p>
-      {lit && (
-        <p
-          data-testid={`home.${id}.lit`}
-          className="font-display text-sm font-bold tracking-widest text-accent"
-        >
-          &gt;&gt; ONLINE &lt;&lt;
-        </p>
-      )}
+      <div className="h-5">
+        {lit && (
+          <p
+            data-testid={`home.${id}.lit`}
+            className="font-display text-sm font-bold tracking-widest text-accent"
+          >
+            &gt;&gt; ONLINE &lt;&lt;
+          </p>
+        )}
+      </div>
     </div>
   );
 }
