@@ -1,0 +1,206 @@
+
+# ======================================================================
+# NEON DRIVE 1990: retro synthwave landing page.
+# Animation = flag-driven frame chains (the grid has no clock):
+#   - "INSERT COIN" blinks, the sun sets, the equalizer bounces, and the
+#     headline glitches, each by a looping set/wait/clear chain.
+#   - hover lights up the cards (if=hover=<id>).
+# Theme is placeholder neon, not a real brand.
+# ======================================================================
+
+theme neondrive
+  accent #ff2bd6 dark=#ff2bd6
+  accent-foreground #12002b
+  background #12002b dark=#12002b
+  foreground #f5e9ff dark=#f5e9ff
+  muted #24104a dark=#24104a
+  muted-foreground #9fe8ff dark=#9fe8ff
+  border #00e5ff dark=#00e5ff
+  danger #ff3b6b
+  radius 0
+  font "Orbitron" google
+  font-body "VT323" google
+  font-mono "VT323" google
+
+component Perk
+  panel card "{name}" flex=1 @hover="set:glow_{id}=1" @leave=clear:glow_{id}
+    text body "{body}"
+    divider rule
+    text stat "{stat}"
+    text lit ">> ONLINE <<" if=hover={id}
+
+component Tape
+  panel card "{name}" flex=1
+    title price "{price}"
+    text blurb "{blurb}"
+    spacer push
+    button buy "{cta}" primary -> signup
+
+screen home url="/"
+  key kEsc "Escape" @do="clear:menu;clear:q1;clear:q2;clear:q3;clear:going"
+  key kCoin "c" @do=go:signup
+
+  col page flex=1 scroll=1 gap=1
+
+    row nav gap=3
+      text wordmark "N E O N  D R I V E  '90"
+      text navCars "The Ride" @click=toast:The Ride if=!bp=xs
+      text navTape "Mixtape" @click=toast:Mixtape if=!bp=xs
+      text navPass "Pass" @click=toast:Pass if=!bp=xs
+      text navFaq "FAQ" @click=toast:FAQ if=!bp=xs
+      spacer navPush
+      text navLogin "Log in" if=!bp=xs -> login
+      button navCoin "Insert coin" primary if=!bp=xs -> signup
+      button burger "= menu" ghost @click=toggle:menu if=bp=xs
+    box navMenu float=1 dy=1 w=26 if=menu
+      text mRide "The Ride" @click=clear:menu
+      text mTape "Mixtape" @click=clear:menu
+      text mLogin "Log in" -> login
+      text mCoin "Insert coin" -> signup
+    divider navRule
+
+    # ---- hero: sunset that sets, glitching headline ------------------
+    col hero gap=1 @enter=go:signup
+      text heroTag "== SIDE A . 1990 . STEREO ==" badge
+      title heroTitle "RIDE INTO THE NEON HORIZON" if=!glitch
+      title heroTitleGlitch "R1DE 1NT0 TH3 N30N H0R1Z0N" if=glitch
+      text heroBody "A late night drive, a drum machine and a sky that never turns off. NEON DRIVE is the 90s synth tape you can join from your browser: stream, remix and cruise with a crew."
+      row heroActions
+        button heroPlay "Press play" primary @click="set:going=1;set:sun1=1;wait:500;clear:sun1;set:sun2=1;wait:500;clear:sun2;set:sun3=1;wait:500;clear:sun3;set:sun4=1;wait:700;toast:tSunset;clear:going"
+        button heroTour "Watch the tour" @click=go:tour
+        spacer heroPush
+      spinner goingSpin "Tuning the radio" if=going
+
+      panel sky "Sunset" border=1
+        text skyBase "      . * .        *        .   *      ." if=!sun1
+        text skyS1 "   _______________________________" if=sun1
+        text skyS2 "  /  ///////  ===  ///////  ===   \\" if=sun2
+        text skyS3 "  ========= sun slips under ========" if=sun3
+        text skyS4 "  ~~~~~ lights out, grid lights up ~~~~~" if=sun4
+        text skySun "        ( ( (  O  ) ) )" if=!sun3
+        text skyHorizon "  ------ horizon ------------------------" 
+        text skyGrid1 "   /  /  /  |  |  |  \\  \\  \\"
+        text skyGrid2 "  /  /  /   |  |  |   \\  \\  \\"
+        text skyGrid3 " ______________________________"
+      text heroProof "Cruising now: Miami . Tokyo . Los Angeles . Berlin"
+    divider heroRule
+
+    # ---- INSERT COIN: blinks on a looping chain -----------------------
+    row coinRow gap=2
+      spacer coinL
+      button coinBlink "INSERT COIN" primary @click="set:blink=1;wait:300;clear:blink;wait:300;set:blink=1;wait:300;clear:blink;wait:300;set:blink=1;wait:300;clear:blink;go:signup"
+      text coinOn ">> 1 PLAYER READY <<" if=blink
+      text coinOff "   1 PLAYER READY   " if=!blink
+      spacer coinR
+    divider coinRule
+
+    # ---- perks --------------------------------------------------------
+    title perkTitle "THE SOUND OF THE DECADE"
+    row perks gap=2 stack=bp=xs
+      Perk pDrive name="Night Drive" stat="120 BPM . 4 on the floor" body="Endless arpeggios and gated reverb, mixed to feel like 2 a.m. on an empty highway."
+      Perk pMix name="Mixtape Maker" stat="C-90 . unlimited" body="Drag tracks onto a virtual cassette, flip the side and share it with a link."
+      Perk pCrew name="Cruise Crew" stat="up to 8 per car" body="Pick your car, join a crew and sync the same playlist across the whole convoy."
+    divider perkRule
+
+    # ---- equalizer: three bars bounce on a frame loop -----------------
+    row eqHead gap=2
+      title eqTitle "LIVE FROM THE GRID"
+      spacer eqPush
+      button eqGo "Wake the EQ" ghost @click="set:eq1=1;wait:250;clear:eq1;set:eq2=1;wait:250;clear:eq2;set:eq3=1;wait:250;clear:eq3;set:eq1=1;wait:250;clear:eq1;set:eq3=1;wait:250;clear:eq3"
+    panel eq "Spectrum" 
+      text eqIdle "|  |  |  |  |  |  |  |" if=!eq1
+      text eqF1 "|# |##|# |  |##|# |  |#" if=eq1
+      text eqF2 "|##|# |##|# |# |##|# |##" if=eq2
+      text eqF3 "|# |##|##|##|  |# |##|#" if=eq3
+      progress eqLevel "Master volume"
+    divider eqRule
+
+    # ---- stats --------------------------------------------------------
+    row stats gap=2 stack=bp=xs
+      stat sTracks "Tracks on the tape" value="1,990" delta="+90" caption="added this month"
+      stat sCars "Cars on the road" value="48,000" delta="+12%" caption="vs last month"
+      stat sMiles "Neon miles driven" value="9.9M" trend=up hint="since launch"
+    divider statRule
+
+    # ---- pass ---------------------------------------------------------
+    row passHead gap=2
+      title passTitle "CHOOSE YOUR TAPE"
+      spacer passPush
+      toggle annual "Annual pass, save 20%" sync=query:billing
+    row tapes gap=2 stack=bp=xs
+      Tape tCoast name="Coast" price="Free" blurb="1 car . 20 tracks . ad breaks" cta="Start cruising"
+      Tape tTurbo name="Turbo" price="$9 / mo" blurb="3 cars . full catalogue . no ads" cta="Go turbo"
+      Tape tChrome name="Chrome" price="$19 / mo" blurb="8 seat crew . stems . live sessions" cta="Go chrome"
+    divider tapeRule
+
+    # ---- faq ----------------------------------------------------------
+    title faqTitle "ASK THE DJ"
+    col faq gap=0
+      text q1open "+ Can I upload my own tracks?" @click=toggle:q1 if=!q1
+      text q1shut "- Can I upload my own tracks?" @click=toggle:q1 if=q1
+      col q1body border=0 pad=3 gap=0 if=q1
+        text q1answer "Yes. Drop in WAV or MP3 and the mixtape gets a cassette label."
+      text q2open "+ Does it work on a tiny screen?" @click=toggle:q2 if=!q2
+      text q2shut "- Does it work on a tiny screen?" @click=toggle:q2 if=q2
+      col q2body border=0 pad=3 gap=0 if=q2
+        text q2answer "Everything stacks into one column and the sunset stays put."
+      text q3open "+ Is there a retro mode?" @click=toggle:q3 if=!q3
+      text q3shut "- Is there a retro mode?" @click=toggle:q3 if=q3
+      col q3body border=0 pad=3 gap=0 if=q3
+        text q3answer "It is the only mode. Scanlines are on by default."
+    divider faqRule
+
+    panel cta "READY PLAYER ONE"
+      text ctaBody "Grab the wheel. First tape is on us."
+      row ctaActions
+        button ctaGo "Insert coin" primary -> signup
+        button ctaLogin "I have a pass" -> login
+        spacer ctaPush
+    divider ctaRule
+
+    row foot
+      text footLegal "NEON DRIVE . est. 1990"
+      spacer footPush
+      text footPrivacy "Privacy" @click=toast:Privacy
+      text footTerms "Terms" @click=toast:Terms
+      text footMail "hello@neondrive.example"
+
+toast tSunset "The sun is down. Let's drive." tone=ok
+
+
+screen signup url="/signup"
+  key suEsc "Escape" @do=go:home
+  row suNav gap=3
+    text suWordmark "N E O N  D R I V E  '90" -> home
+    spacer suNavPush
+    text suBack "Back to the road" -> home
+  divider suNavRule
+  col suWrap flex=1
+    spacer suTop
+    row suRow
+      spacer suLeft
+      panel suPanel "PLAYER ONE: CREATE ACCOUNT" w=58
+        input suName "Handle" "NightRider90" error=!val.suName err="Pick a handle to get on the road"
+        input suEmail "Email" "you@neondrive.example" type=email
+        select suCar "Your ride" "DeLorean|Testarossa|Countach|Firebird"
+        select suTape "Tape" "Coast (free)|Turbo|Chrome"
+        check suTerms "I accept the terms of the road"
+        row suActions
+          button suCancel "Cancel" -> home
+          spacer suGap
+          button suGo "Start engine" primary disabled=!val.suName @click="set:starting=1;wait:900;clear:starting;toast:Engine running;go:home"
+        spinner suSpin "Revving" if=starting
+        divider suRule
+        text suHave "Already have a pass? Log in" -> login
+      spacer suRight
+    spacer suBottom
+
+
+modal tour "THE TOUR" w=60 h=14
+  text tourBody "Three stops: the garage, the highway, the sunset. Press play and keep your eyes on the horizon."
+  progress tourProg "Tour progress"
+  spacer tourPush
+  row tourActions
+    button tourSkip "Skip" -> close
+    spacer tourGap
+    button tourSign "Join the crew" primary -> signup

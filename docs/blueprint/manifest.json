@@ -1,0 +1,3839 @@
+{
+  "entry": "home",
+  "screens": [
+    {
+      "id": "home",
+      "kind": "screen",
+      "url": "/",
+      "pathParams": [],
+      "query": [
+        {
+          "name": "billing",
+          "from": "home.annual",
+          "variable": "annual",
+          "type": "boolean"
+        }
+      ],
+      "elements": [
+        {
+          "testid": "home",
+          "type": "screen",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "document",
+          "data": "static",
+          "idKind": "named",
+          "variants": [
+            "default"
+          ],
+          "var": "home",
+          "url": "/"
+        },
+        {
+          "testid": "home.kEsc",
+          "type": "key",
+          "label": "Escape",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "application",
+          "idKind": "named",
+          "events": {
+            "do": [
+              {
+                "op": "clear",
+                "arg": "menu"
+              },
+              {
+                "op": "clear",
+                "arg": "q1"
+              },
+              {
+                "op": "clear",
+                "arg": "q2"
+              },
+              {
+                "op": "clear",
+                "arg": "q3"
+              },
+              {
+                "op": "clear",
+                "arg": "going"
+              }
+            ]
+          },
+          "var": "kEsc",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "flag:menu",
+            "flag:q1",
+            "flag:q2",
+            "flag:q3",
+            "flag:going"
+          ]
+        },
+        {
+          "testid": "home.kCoin",
+          "type": "key",
+          "label": "c",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "application",
+          "idKind": "named",
+          "events": {
+            "do": [
+              {
+                "op": "go",
+                "arg": "signup",
+                "params": null
+              }
+            ]
+          },
+          "var": "kCoin",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:signup"
+          ]
+        },
+        {
+          "testid": "home.page",
+          "type": "col",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 23,
+          "var": "page",
+          "data": "static",
+          "state": {
+            "slot": "scroll",
+            "key": "home.page",
+            "type": "row offset"
+          },
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.nav",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 8,
+          "var": "nav",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.wordmark",
+          "type": "text",
+          "label": "N E O N  D R I V E  '90",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "wordmark",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.navCars",
+          "type": "text",
+          "label": "The Ride",
+          "guard": "!bp=xs",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toast",
+                "arg": "The Ride"
+              }
+            ]
+          },
+          "var": "navCars",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "bp=xs"
+          ],
+          "writes": [
+            "ui:toast"
+          ]
+        },
+        {
+          "testid": "home.navTape",
+          "type": "text",
+          "label": "Mixtape",
+          "guard": "!bp=xs",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toast",
+                "arg": "Mixtape"
+              }
+            ]
+          },
+          "var": "navTape",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "bp=xs"
+          ],
+          "writes": [
+            "ui:toast"
+          ]
+        },
+        {
+          "testid": "home.navPass",
+          "type": "text",
+          "label": "Pass",
+          "guard": "!bp=xs",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toast",
+                "arg": "Pass"
+              }
+            ]
+          },
+          "var": "navPass",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "bp=xs"
+          ],
+          "writes": [
+            "ui:toast"
+          ]
+        },
+        {
+          "testid": "home.navFaq",
+          "type": "text",
+          "label": "FAQ",
+          "guard": "!bp=xs",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toast",
+                "arg": "FAQ"
+              }
+            ]
+          },
+          "var": "navFaq",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "bp=xs"
+          ],
+          "writes": [
+            "ui:toast"
+          ]
+        },
+        {
+          "testid": "home.navPush",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "navPush",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.navLogin",
+          "type": "text",
+          "label": "Log in",
+          "guard": "!bp=xs",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "login",
+                "params": null
+              }
+            ]
+          },
+          "var": "navLogin",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "bp=xs"
+          ],
+          "writes": [
+            "screen:login"
+          ]
+        },
+        {
+          "testid": "home.navCoin",
+          "type": "button",
+          "label": "Insert coin",
+          "guard": "!bp=xs",
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "signup",
+                "params": null
+              }
+            ]
+          },
+          "var": "navCoin",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "bp=xs"
+          ],
+          "writes": [
+            "screen:signup"
+          ]
+        },
+        {
+          "testid": "home.burger",
+          "type": "button",
+          "label": "= menu",
+          "guard": "bp=xs",
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toggle",
+                "arg": "menu"
+              }
+            ]
+          },
+          "var": "burger",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "bp=xs"
+          ],
+          "writes": [
+            "flag:menu"
+          ]
+        },
+        {
+          "testid": "home.navMenu",
+          "type": "box",
+          "label": "",
+          "guard": "menu",
+          "interactive": false,
+          "role": "region",
+          "aria": "group",
+          "idKind": "named",
+          "children": 4,
+          "var": "navMenu",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "menu"
+          ]
+        },
+        {
+          "testid": "home.mRide",
+          "type": "text",
+          "label": "The Ride",
+          "guard": "menu",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "clear",
+                "arg": "menu"
+              }
+            ]
+          },
+          "var": "mRide",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "flag:menu"
+          ]
+        },
+        {
+          "testid": "home.mTape",
+          "type": "text",
+          "label": "Mixtape",
+          "guard": "menu",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "clear",
+                "arg": "menu"
+              }
+            ]
+          },
+          "var": "mTape",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "flag:menu"
+          ]
+        },
+        {
+          "testid": "home.mLogin",
+          "type": "text",
+          "label": "Log in",
+          "guard": "menu",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "login",
+                "params": null
+              }
+            ]
+          },
+          "var": "mLogin",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:login"
+          ]
+        },
+        {
+          "testid": "home.mCoin",
+          "type": "text",
+          "label": "Insert coin",
+          "guard": "menu",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "signup",
+                "params": null
+              }
+            ]
+          },
+          "var": "mCoin",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:signup"
+          ]
+        },
+        {
+          "testid": "home.navRule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "navRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.hero",
+          "type": "col",
+          "label": "",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": null,
+          "idKind": "named",
+          "children": 6,
+          "events": {
+            "enter": [
+              {
+                "op": "go",
+                "arg": "signup",
+                "params": null
+              }
+            ]
+          },
+          "var": "hero",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:signup"
+          ]
+        },
+        {
+          "testid": "home.heroTag",
+          "type": "text",
+          "label": "== SIDE A . 1990 . STEREO ==",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "heroTag",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.heroTitle",
+          "type": "title",
+          "label": "RIDE INTO THE NEON HORIZON",
+          "guard": "!glitch",
+          "interactive": false,
+          "role": "content",
+          "aria": "heading",
+          "idKind": "named",
+          "var": "heroTitle",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "glitch"
+          ]
+        },
+        {
+          "testid": "home.heroTitleGlitch",
+          "type": "title",
+          "label": "R1DE 1NT0 TH3 N30N H0R1Z0N",
+          "guard": "glitch",
+          "interactive": false,
+          "role": "content",
+          "aria": "heading",
+          "idKind": "named",
+          "var": "heroTitleGlitch",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "glitch"
+          ]
+        },
+        {
+          "testid": "home.heroBody",
+          "type": "text",
+          "label": "A late night drive, a drum machine and a sky that never turns off. NEON DRIVE is the 90s synth tape you can join from your browser: stream, remix and cruise with a crew.",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "heroBody",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.heroActions",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "heroActions",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.heroPlay",
+          "type": "button",
+          "label": "Press play",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "set",
+                "key": "going",
+                "val": "1"
+              },
+              {
+                "op": "set",
+                "key": "sun1",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "500"
+              },
+              {
+                "op": "clear",
+                "arg": "sun1"
+              },
+              {
+                "op": "set",
+                "key": "sun2",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "500"
+              },
+              {
+                "op": "clear",
+                "arg": "sun2"
+              },
+              {
+                "op": "set",
+                "key": "sun3",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "500"
+              },
+              {
+                "op": "clear",
+                "arg": "sun3"
+              },
+              {
+                "op": "set",
+                "key": "sun4",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "700"
+              },
+              {
+                "op": "toast",
+                "arg": "tSunset"
+              },
+              {
+                "op": "clear",
+                "arg": "going"
+              }
+            ]
+          },
+          "var": "heroPlay",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "flag:going",
+            "flag:sun1",
+            "flag:sun2",
+            "flag:sun3",
+            "flag:sun4",
+            "ui:toast"
+          ]
+        },
+        {
+          "testid": "home.heroTour",
+          "type": "button",
+          "label": "Watch the tour",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "tour",
+                "params": null
+              }
+            ]
+          },
+          "var": "heroTour",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:tour"
+          ]
+        },
+        {
+          "testid": "home.heroPush",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "heroPush",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.goingSpin",
+          "type": "spinner",
+          "label": "Tuning the radio",
+          "guard": "going",
+          "interactive": false,
+          "role": "content",
+          "aria": "status",
+          "idKind": "named",
+          "var": "goingSpin",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "going"
+          ]
+        },
+        {
+          "testid": "home.sky",
+          "type": "panel",
+          "label": "Sunset",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "region",
+          "idKind": "named",
+          "children": 6,
+          "var": "sky",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.skyBase",
+          "type": "text",
+          "label": "      . * .        *        .   *      .",
+          "guard": "!sun1",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "skyBase",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "sun1"
+          ]
+        },
+        {
+          "testid": "home.skyS1",
+          "type": "text",
+          "label": "   _______________________________",
+          "guard": "sun1",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "skyS1",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "sun1"
+          ]
+        },
+        {
+          "testid": "home.skyS2",
+          "type": "text",
+          "label": "  /  ///////  ===  ///////  ===   \\\\",
+          "guard": "sun2",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "skyS2",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "sun2"
+          ]
+        },
+        {
+          "testid": "home.skyS3",
+          "type": "text",
+          "label": "  ========= sun slips under ========",
+          "guard": "sun3",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "skyS3",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "sun3"
+          ]
+        },
+        {
+          "testid": "home.skyS4",
+          "type": "text",
+          "label": "  ~~~~~ lights out, grid lights up ~~~~~",
+          "guard": "sun4",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "skyS4",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "sun4"
+          ]
+        },
+        {
+          "testid": "home.skySun",
+          "type": "text",
+          "label": "        ( ( (  O  ) ) )",
+          "guard": "!sun3",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "skySun",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "sun3"
+          ]
+        },
+        {
+          "testid": "home.skyHorizon",
+          "type": "text",
+          "label": "  ------ horizon ------------------------",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "skyHorizon",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.skyGrid1",
+          "type": "text",
+          "label": "   /  /  /  |  |  |  \\\\  \\\\  \\\\",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "items": [
+            "/  /  /",
+            "\\\\  \\\\  \\\\",
+            "/  /  /",
+            "\\\\  \\\\  \\\\"
+          ],
+          "var": "skyGrid1",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.skyGrid2",
+          "type": "text",
+          "label": "  /  /  /   |  |  |   \\\\  \\\\  \\\\",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "items": [
+            "/  /  /",
+            "\\\\  \\\\  \\\\",
+            "/  /  /",
+            "\\\\  \\\\  \\\\"
+          ],
+          "var": "skyGrid2",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.skyGrid3",
+          "type": "text",
+          "label": " ______________________________",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "skyGrid3",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.heroProof",
+          "type": "text",
+          "label": "Cruising now: Miami . Tokyo . Los Angeles . Berlin",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "heroProof",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.heroRule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "heroRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.coinRow",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 4,
+          "var": "coinRow",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.coinL",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "coinL",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.coinBlink",
+          "type": "button",
+          "label": "INSERT COIN",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "set",
+                "key": "blink",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "300"
+              },
+              {
+                "op": "clear",
+                "arg": "blink"
+              },
+              {
+                "op": "wait",
+                "arg": "300"
+              },
+              {
+                "op": "set",
+                "key": "blink",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "300"
+              },
+              {
+                "op": "clear",
+                "arg": "blink"
+              },
+              {
+                "op": "wait",
+                "arg": "300"
+              },
+              {
+                "op": "set",
+                "key": "blink",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "300"
+              },
+              {
+                "op": "clear",
+                "arg": "blink"
+              },
+              {
+                "op": "go",
+                "arg": "signup",
+                "params": null
+              }
+            ]
+          },
+          "var": "coinBlink",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "flag:blink",
+            "screen:signup"
+          ]
+        },
+        {
+          "testid": "home.coinOn",
+          "type": "text",
+          "label": ">> 1 PLAYER READY <<",
+          "guard": "blink",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "coinOn",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "blink"
+          ]
+        },
+        {
+          "testid": "home.coinOff",
+          "type": "text",
+          "label": "   1 PLAYER READY   ",
+          "guard": "!blink",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "coinOff",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "blink"
+          ]
+        },
+        {
+          "testid": "home.coinR",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "coinR",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.coinRule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "coinRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.perkTitle",
+          "type": "title",
+          "label": "THE SOUND OF THE DECADE",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "heading",
+          "idKind": "named",
+          "var": "perkTitle",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.perks",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "perks",
+          "data": "static",
+          "variants": [
+            "default"
+          ],
+          "reads": [
+            "bp=xs"
+          ]
+        },
+        {
+          "testid": "home.pDrive.card",
+          "type": "panel",
+          "label": "Night Drive",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "region",
+          "idKind": "named",
+          "children": 3,
+          "events": {
+            "hover": [
+              {
+                "op": "set",
+                "key": "glow_pDrive",
+                "val": "1"
+              }
+            ],
+            "leave": [
+              {
+                "op": "clear",
+                "arg": "glow_pDrive"
+              }
+            ]
+          },
+          "var": "pDriveCard",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "flag:glow_pDrive"
+          ]
+        },
+        {
+          "testid": "home.pDrive.body",
+          "type": "text",
+          "label": "Endless arpeggios and gated reverb, mixed to feel like 2 a.m. on an empty highway.",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "pDriveBody",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.pDrive.rule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "pDriveRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.pDrive.stat",
+          "type": "text",
+          "label": "120 BPM . 4 on the floor",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "pDriveStat",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.pDrive.lit",
+          "type": "text",
+          "label": ">> ONLINE <<",
+          "guard": "hover=pDrive",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "pDriveLit",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "hover=pDrive"
+          ]
+        },
+        {
+          "testid": "home.pMix.card",
+          "type": "panel",
+          "label": "Mixtape Maker",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "region",
+          "idKind": "named",
+          "children": 3,
+          "events": {
+            "hover": [
+              {
+                "op": "set",
+                "key": "glow_pMix",
+                "val": "1"
+              }
+            ],
+            "leave": [
+              {
+                "op": "clear",
+                "arg": "glow_pMix"
+              }
+            ]
+          },
+          "var": "pMixCard",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "flag:glow_pMix"
+          ]
+        },
+        {
+          "testid": "home.pMix.body",
+          "type": "text",
+          "label": "Drag tracks onto a virtual cassette, flip the side and share it with a link.",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "pMixBody",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.pMix.rule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "pMixRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.pMix.stat",
+          "type": "text",
+          "label": "C-90 . unlimited",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "pMixStat",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.pMix.lit",
+          "type": "text",
+          "label": ">> ONLINE <<",
+          "guard": "hover=pMix",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "pMixLit",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "hover=pMix"
+          ]
+        },
+        {
+          "testid": "home.pCrew.card",
+          "type": "panel",
+          "label": "Cruise Crew",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "region",
+          "idKind": "named",
+          "children": 3,
+          "events": {
+            "hover": [
+              {
+                "op": "set",
+                "key": "glow_pCrew",
+                "val": "1"
+              }
+            ],
+            "leave": [
+              {
+                "op": "clear",
+                "arg": "glow_pCrew"
+              }
+            ]
+          },
+          "var": "pCrewCard",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "flag:glow_pCrew"
+          ]
+        },
+        {
+          "testid": "home.pCrew.body",
+          "type": "text",
+          "label": "Pick your car, join a crew and sync the same playlist across the whole convoy.",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "pCrewBody",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.pCrew.rule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "pCrewRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.pCrew.stat",
+          "type": "text",
+          "label": "up to 8 per car",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "pCrewStat",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.pCrew.lit",
+          "type": "text",
+          "label": ">> ONLINE <<",
+          "guard": "hover=pCrew",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "pCrewLit",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "hover=pCrew"
+          ]
+        },
+        {
+          "testid": "home.perkRule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "perkRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.eqHead",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "eqHead",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.eqTitle",
+          "type": "title",
+          "label": "LIVE FROM THE GRID",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "heading",
+          "idKind": "named",
+          "var": "eqTitle",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.eqPush",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "eqPush",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.eqGo",
+          "type": "button",
+          "label": "Wake the EQ",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "set",
+                "key": "eq1",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "250"
+              },
+              {
+                "op": "clear",
+                "arg": "eq1"
+              },
+              {
+                "op": "set",
+                "key": "eq2",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "250"
+              },
+              {
+                "op": "clear",
+                "arg": "eq2"
+              },
+              {
+                "op": "set",
+                "key": "eq3",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "250"
+              },
+              {
+                "op": "clear",
+                "arg": "eq3"
+              },
+              {
+                "op": "set",
+                "key": "eq1",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "250"
+              },
+              {
+                "op": "clear",
+                "arg": "eq1"
+              },
+              {
+                "op": "set",
+                "key": "eq3",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "250"
+              },
+              {
+                "op": "clear",
+                "arg": "eq3"
+              }
+            ]
+          },
+          "var": "eqGo",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "flag:eq1",
+            "flag:eq2",
+            "flag:eq3"
+          ]
+        },
+        {
+          "testid": "home.eq",
+          "type": "panel",
+          "label": "Spectrum",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "region",
+          "idKind": "named",
+          "children": 2,
+          "var": "eq",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.eqIdle",
+          "type": "text",
+          "label": "|  |  |  |  |  |  |  |",
+          "guard": "!eq1",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "eqIdle",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "eq1"
+          ]
+        },
+        {
+          "testid": "home.eqF1",
+          "type": "text",
+          "label": "|# |##|# |  |##|# |  |#",
+          "guard": "eq1",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "items": [
+            "#",
+            "##",
+            "#",
+            "##",
+            "#",
+            "#",
+            "#",
+            "##",
+            "#",
+            "##",
+            "#",
+            "#"
+          ],
+          "var": "eqF1",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "eq1"
+          ]
+        },
+        {
+          "testid": "home.eqF2",
+          "type": "text",
+          "label": "|##|# |##|# |# |##|# |##",
+          "guard": "eq2",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "items": [
+            "##",
+            "#",
+            "##",
+            "#",
+            "#",
+            "##",
+            "#",
+            "##",
+            "##",
+            "#",
+            "##",
+            "#",
+            "#",
+            "##",
+            "#",
+            "##"
+          ],
+          "var": "eqF2",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "eq2"
+          ]
+        },
+        {
+          "testid": "home.eqF3",
+          "type": "text",
+          "label": "|# |##|##|##|  |# |##|#",
+          "guard": "eq3",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "items": [
+            "#",
+            "##",
+            "##",
+            "##",
+            "#",
+            "##",
+            "#",
+            "#",
+            "##",
+            "##",
+            "##",
+            "#",
+            "##",
+            "#"
+          ],
+          "var": "eqF3",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "eq3"
+          ]
+        },
+        {
+          "testid": "home.eqLevel",
+          "type": "progress",
+          "label": "Master volume",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "progressbar",
+          "idKind": "named",
+          "var": "eqLevel",
+          "data": "sample",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.eqRule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "eqRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.stats",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "stats",
+          "data": "static",
+          "variants": [
+            "default"
+          ],
+          "reads": [
+            "bp=xs"
+          ]
+        },
+        {
+          "testid": "home.sTracks",
+          "type": "stat",
+          "label": "Tracks on the tape",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "group",
+          "idKind": "named",
+          "var": "sTracks",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.sCars",
+          "type": "stat",
+          "label": "Cars on the road",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "group",
+          "idKind": "named",
+          "var": "sCars",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.sMiles",
+          "type": "stat",
+          "label": "Neon miles driven",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "group",
+          "idKind": "named",
+          "var": "sMiles",
+          "data": "static",
+          "variants": [
+            "default",
+            "trend up"
+          ],
+          "trend": "up",
+          "hint": "since launch"
+        },
+        {
+          "testid": "home.statRule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "statRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.passHead",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "passHead",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.passTitle",
+          "type": "title",
+          "label": "CHOOSE YOUR TAPE",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "heading",
+          "idKind": "named",
+          "var": "passTitle",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.passPush",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "passPush",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.annual",
+          "type": "toggle",
+          "label": "Annual pass, save 20%",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "switch",
+          "idKind": "named",
+          "var": "annual",
+          "sync": {
+            "channel": "query",
+            "name": "billing"
+          },
+          "valueType": {
+            "type": "boolean"
+          },
+          "data": "dynamic",
+          "state": {
+            "slot": "checks",
+            "key": "home.annual",
+            "type": "boolean"
+          },
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "selected"
+          ]
+        },
+        {
+          "testid": "home.tapes",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "tapes",
+          "data": "static",
+          "variants": [
+            "default"
+          ],
+          "reads": [
+            "bp=xs"
+          ]
+        },
+        {
+          "testid": "home.tCoast.card",
+          "type": "panel",
+          "label": "Coast",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "region",
+          "idKind": "named",
+          "children": 4,
+          "var": "tCoastCard",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.tCoast.price",
+          "type": "title",
+          "label": "Free",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "heading",
+          "idKind": "named",
+          "var": "tCoastPrice",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.tCoast.blurb",
+          "type": "text",
+          "label": "1 car . 20 tracks . ad breaks",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "tCoastBlurb",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.tCoast.push",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "tCoastPush",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.tCoast.buy",
+          "type": "button",
+          "label": "Start cruising",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "signup",
+                "params": null
+              }
+            ]
+          },
+          "var": "tCoastBuy",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:signup"
+          ]
+        },
+        {
+          "testid": "home.tTurbo.card",
+          "type": "panel",
+          "label": "Turbo",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "region",
+          "idKind": "named",
+          "children": 4,
+          "var": "tTurboCard",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.tTurbo.price",
+          "type": "title",
+          "label": "$9 / mo",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "heading",
+          "idKind": "named",
+          "var": "tTurboPrice",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.tTurbo.blurb",
+          "type": "text",
+          "label": "3 cars . full catalogue . no ads",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "tTurboBlurb",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.tTurbo.push",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "tTurboPush",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.tTurbo.buy",
+          "type": "button",
+          "label": "Go turbo",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "signup",
+                "params": null
+              }
+            ]
+          },
+          "var": "tTurboBuy",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:signup"
+          ]
+        },
+        {
+          "testid": "home.tChrome.card",
+          "type": "panel",
+          "label": "Chrome",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "region",
+          "idKind": "named",
+          "children": 4,
+          "var": "tChromeCard",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.tChrome.price",
+          "type": "title",
+          "label": "$19 / mo",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "heading",
+          "idKind": "named",
+          "var": "tChromePrice",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.tChrome.blurb",
+          "type": "text",
+          "label": "8 seat crew . stems . live sessions",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "tChromeBlurb",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.tChrome.push",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "tChromePush",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.tChrome.buy",
+          "type": "button",
+          "label": "Go chrome",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "signup",
+                "params": null
+              }
+            ]
+          },
+          "var": "tChromeBuy",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:signup"
+          ]
+        },
+        {
+          "testid": "home.tapeRule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "tapeRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.faqTitle",
+          "type": "title",
+          "label": "ASK THE DJ",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "heading",
+          "idKind": "named",
+          "var": "faqTitle",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.faq",
+          "type": "col",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "faq",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.q1open",
+          "type": "text",
+          "label": "+ Can I upload my own tracks?",
+          "guard": "!q1",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toggle",
+                "arg": "q1"
+              }
+            ]
+          },
+          "var": "q1open",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "q1"
+          ],
+          "writes": [
+            "flag:q1"
+          ]
+        },
+        {
+          "testid": "home.q1shut",
+          "type": "text",
+          "label": "- Can I upload my own tracks?",
+          "guard": "q1",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toggle",
+                "arg": "q1"
+              }
+            ]
+          },
+          "var": "q1shut",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "q1"
+          ],
+          "writes": [
+            "flag:q1"
+          ]
+        },
+        {
+          "testid": "home.q1body",
+          "type": "col",
+          "label": "",
+          "guard": "q1",
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 1,
+          "var": "q1body",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "q1"
+          ]
+        },
+        {
+          "testid": "home.q1answer",
+          "type": "text",
+          "label": "Yes. Drop in WAV or MP3 and the mixtape gets a cassette label.",
+          "guard": "q1",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "q1answer",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.q2open",
+          "type": "text",
+          "label": "+ Does it work on a tiny screen?",
+          "guard": "!q2",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toggle",
+                "arg": "q2"
+              }
+            ]
+          },
+          "var": "q2open",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "q2"
+          ],
+          "writes": [
+            "flag:q2"
+          ]
+        },
+        {
+          "testid": "home.q2shut",
+          "type": "text",
+          "label": "- Does it work on a tiny screen?",
+          "guard": "q2",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toggle",
+                "arg": "q2"
+              }
+            ]
+          },
+          "var": "q2shut",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "q2"
+          ],
+          "writes": [
+            "flag:q2"
+          ]
+        },
+        {
+          "testid": "home.q2body",
+          "type": "col",
+          "label": "",
+          "guard": "q2",
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 1,
+          "var": "q2body",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "q2"
+          ]
+        },
+        {
+          "testid": "home.q2answer",
+          "type": "text",
+          "label": "Everything stacks into one column and the sunset stays put.",
+          "guard": "q2",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "q2answer",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.q3open",
+          "type": "text",
+          "label": "+ Is there a retro mode?",
+          "guard": "!q3",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toggle",
+                "arg": "q3"
+              }
+            ]
+          },
+          "var": "q3open",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "q3"
+          ],
+          "writes": [
+            "flag:q3"
+          ]
+        },
+        {
+          "testid": "home.q3shut",
+          "type": "text",
+          "label": "- Is there a retro mode?",
+          "guard": "q3",
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toggle",
+                "arg": "q3"
+              }
+            ]
+          },
+          "var": "q3shut",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "hidden"
+          ],
+          "reads": [
+            "q3"
+          ],
+          "writes": [
+            "flag:q3"
+          ]
+        },
+        {
+          "testid": "home.q3body",
+          "type": "col",
+          "label": "",
+          "guard": "q3",
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 1,
+          "var": "q3body",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "q3"
+          ]
+        },
+        {
+          "testid": "home.q3answer",
+          "type": "text",
+          "label": "It is the only mode. Scanlines are on by default.",
+          "guard": "q3",
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "q3answer",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.faqRule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "faqRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.cta",
+          "type": "panel",
+          "label": "READY PLAYER ONE",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "region",
+          "idKind": "named",
+          "children": 2,
+          "var": "cta",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.ctaBody",
+          "type": "text",
+          "label": "Grab the wheel. First tape is on us.",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "ctaBody",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.ctaActions",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "ctaActions",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.ctaGo",
+          "type": "button",
+          "label": "Insert coin",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "signup",
+                "params": null
+              }
+            ]
+          },
+          "var": "ctaGo",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:signup"
+          ]
+        },
+        {
+          "testid": "home.ctaLogin",
+          "type": "button",
+          "label": "I have a pass",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "login",
+                "params": null
+              }
+            ]
+          },
+          "var": "ctaLogin",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:login"
+          ]
+        },
+        {
+          "testid": "home.ctaPush",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "ctaPush",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.ctaRule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "ctaRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.foot",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 5,
+          "var": "foot",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.footLegal",
+          "type": "text",
+          "label": "NEON DRIVE . est. 1990",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "footLegal",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.footPush",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "footPush",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "home.footPrivacy",
+          "type": "text",
+          "label": "Privacy",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toast",
+                "arg": "Privacy"
+              }
+            ]
+          },
+          "var": "footPrivacy",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "ui:toast"
+          ]
+        },
+        {
+          "testid": "home.footTerms",
+          "type": "text",
+          "label": "Terms",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "toast",
+                "arg": "Terms"
+              }
+            ]
+          },
+          "var": "footTerms",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "ui:toast"
+          ]
+        },
+        {
+          "testid": "home.footMail",
+          "type": "text",
+          "label": "hello@neondrive.example",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "footMail",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "signup",
+      "kind": "screen",
+      "url": "/signup",
+      "pathParams": [],
+      "query": [],
+      "elements": [
+        {
+          "testid": "signup",
+          "type": "screen",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "document",
+          "data": "static",
+          "idKind": "named",
+          "variants": [
+            "default"
+          ],
+          "var": "signup",
+          "url": "/signup"
+        },
+        {
+          "testid": "signup.suEsc",
+          "type": "key",
+          "label": "Escape",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "application",
+          "idKind": "named",
+          "events": {
+            "do": [
+              {
+                "op": "go",
+                "arg": "home",
+                "params": null
+              }
+            ]
+          },
+          "var": "suEsc",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:home"
+          ]
+        },
+        {
+          "testid": "signup.suNav",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "suNav",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "signup.suWordmark",
+          "type": "text",
+          "label": "N E O N  D R I V E  '90",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "home",
+                "params": null
+              }
+            ]
+          },
+          "var": "suWordmark",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:home"
+          ]
+        },
+        {
+          "testid": "signup.suNavPush",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "suNavPush",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "signup.suBack",
+          "type": "text",
+          "label": "Back to the road",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "home",
+                "params": null
+              }
+            ]
+          },
+          "var": "suBack",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:home"
+          ]
+        },
+        {
+          "testid": "signup.suNavRule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "suNavRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "signup.suWrap",
+          "type": "col",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "suWrap",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "signup.suTop",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "suTop",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "signup.suRow",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "suRow",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "signup.suLeft",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "suLeft",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "signup.suPanel",
+          "type": "panel",
+          "label": "PLAYER ONE: CREATE ACCOUNT",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "region",
+          "idKind": "named",
+          "children": 8,
+          "var": "suPanel",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "signup.suName",
+          "type": "input",
+          "label": "Handle",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "textbox",
+          "idKind": "named",
+          "errorWhen": "!val.suName",
+          "placeholder": "NightRider90",
+          "inputType": "text",
+          "var": "suName",
+          "data": "dynamic",
+          "state": {
+            "slot": "values",
+            "key": "signup.suName",
+            "type": "string"
+          },
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "selected",
+            "error"
+          ],
+          "reads": [
+            "val.suName"
+          ]
+        },
+        {
+          "testid": "signup.suEmail",
+          "type": "input",
+          "label": "Email",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "textbox",
+          "idKind": "named",
+          "placeholder": "you@neondrive.example",
+          "inputType": "email",
+          "var": "suEmail",
+          "data": "dynamic",
+          "state": {
+            "slot": "values",
+            "key": "signup.suEmail",
+            "type": "string"
+          },
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "selected"
+          ]
+        },
+        {
+          "testid": "signup.suCar",
+          "type": "select",
+          "label": "Your ride",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "combobox",
+          "idKind": "named",
+          "options": [
+            "DeLorean",
+            "Testarossa",
+            "Countach",
+            "Firebird"
+          ],
+          "var": "suCar",
+          "data": "dynamic",
+          "state": {
+            "slot": "sel",
+            "key": "signup.suCar",
+            "type": "index",
+            "domain": [
+              "DeLorean",
+              "Testarossa",
+              "Countach",
+              "Firebird"
+            ]
+          },
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "selected"
+          ]
+        },
+        {
+          "testid": "signup.suTape",
+          "type": "select",
+          "label": "Tape",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "combobox",
+          "idKind": "named",
+          "options": [
+            "Coast (free)",
+            "Turbo",
+            "Chrome"
+          ],
+          "var": "suTape",
+          "data": "dynamic",
+          "state": {
+            "slot": "sel",
+            "key": "signup.suTape",
+            "type": "index",
+            "domain": [
+              "Coast (free)",
+              "Turbo",
+              "Chrome"
+            ]
+          },
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "selected"
+          ]
+        },
+        {
+          "testid": "signup.suTerms",
+          "type": "check",
+          "label": "I accept the terms of the road",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "checkbox",
+          "idKind": "named",
+          "var": "suTerms",
+          "data": "dynamic",
+          "state": {
+            "slot": "checks",
+            "key": "signup.suTerms",
+            "type": "boolean"
+          },
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "selected"
+          ]
+        },
+        {
+          "testid": "signup.suActions",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "suActions",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "signup.suCancel",
+          "type": "button",
+          "label": "Cancel",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "home",
+                "params": null
+              }
+            ]
+          },
+          "var": "suCancel",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:home"
+          ]
+        },
+        {
+          "testid": "signup.suGap",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "suGap",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "signup.suGo",
+          "type": "button",
+          "label": "Start engine",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "disabledWhen": "!val.suName",
+          "events": {
+            "click": [
+              {
+                "op": "set",
+                "key": "starting",
+                "val": "1"
+              },
+              {
+                "op": "wait",
+                "arg": "900"
+              },
+              {
+                "op": "clear",
+                "arg": "starting"
+              },
+              {
+                "op": "toast",
+                "arg": "Engine running"
+              },
+              {
+                "op": "go",
+                "arg": "home",
+                "params": null
+              }
+            ]
+          },
+          "var": "suGo",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus",
+            "disabled"
+          ],
+          "reads": [
+            "val.suName"
+          ],
+          "writes": [
+            "flag:starting",
+            "ui:toast",
+            "screen:home"
+          ]
+        },
+        {
+          "testid": "signup.suSpin",
+          "type": "spinner",
+          "label": "Revving",
+          "guard": "starting",
+          "interactive": false,
+          "role": "content",
+          "aria": "status",
+          "idKind": "named",
+          "var": "suSpin",
+          "data": "static",
+          "variants": [
+            "default",
+            "hidden"
+          ],
+          "reads": [
+            "starting"
+          ]
+        },
+        {
+          "testid": "signup.suRule",
+          "type": "divider",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "separator",
+          "idKind": "named",
+          "var": "suRule",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "signup.suHave",
+          "type": "text",
+          "label": "Already have a pass? Log in",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "paragraph",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "login",
+                "params": null
+              }
+            ]
+          },
+          "var": "suHave",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:login"
+          ]
+        },
+        {
+          "testid": "signup.suRight",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "suRight",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "signup.suBottom",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "suBottom",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tour",
+      "kind": "modal",
+      "url": null,
+      "pathParams": [],
+      "query": [],
+      "elements": [
+        {
+          "testid": "tour",
+          "type": "modal",
+          "label": "THE TOUR",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": "dialog",
+          "data": "static",
+          "idKind": "named",
+          "variants": [
+            "default"
+          ],
+          "var": "tour",
+          "url": null
+        },
+        {
+          "testid": "tour.tourBody",
+          "type": "text",
+          "label": "Three stops: the garage, the highway, the sunset. Press play and keep your eyes on the horizon.",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "paragraph",
+          "idKind": "named",
+          "var": "tourBody",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "tour.tourProg",
+          "type": "progress",
+          "label": "Tour progress",
+          "guard": null,
+          "interactive": false,
+          "role": "content",
+          "aria": "progressbar",
+          "idKind": "named",
+          "var": "tourProg",
+          "data": "sample",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "tour.tourPush",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "tourPush",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "tour.tourActions",
+          "type": "row",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "children": 3,
+          "var": "tourActions",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "tour.tourSkip",
+          "type": "button",
+          "label": "Skip",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "close",
+                "params": null
+              }
+            ]
+          },
+          "var": "tourSkip",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:close"
+          ]
+        },
+        {
+          "testid": "tour.tourGap",
+          "type": "spacer",
+          "label": "",
+          "guard": null,
+          "interactive": false,
+          "role": "region",
+          "aria": null,
+          "idKind": "named",
+          "var": "tourGap",
+          "data": "static",
+          "variants": [
+            "default"
+          ]
+        },
+        {
+          "testid": "tour.tourSign",
+          "type": "button",
+          "label": "Join the crew",
+          "guard": null,
+          "interactive": true,
+          "role": "control",
+          "aria": "button",
+          "idKind": "named",
+          "events": {
+            "click": [
+              {
+                "op": "go",
+                "arg": "signup",
+                "params": null
+              }
+            ]
+          },
+          "var": "tourSign",
+          "data": "static",
+          "variants": [
+            "default",
+            "hover",
+            "focus"
+          ],
+          "writes": [
+            "screen:signup"
+          ]
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "from": "home",
+      "to": "signup",
+      "via": "key c",
+      "guard": null,
+      "url": "/signup",
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "home",
+      "to": "signup",
+      "via": "Insert coin",
+      "guard": null,
+      "url": "/signup",
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "home",
+      "to": "signup",
+      "via": "hero",
+      "guard": null,
+      "url": "/signup",
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "home",
+      "to": "tour",
+      "via": "Watch the tour",
+      "guard": null,
+      "url": null,
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "home",
+      "to": "signup",
+      "via": "INSERT COIN",
+      "guard": null,
+      "url": "/signup",
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "home",
+      "to": "signup",
+      "via": "Start cruising",
+      "guard": null,
+      "url": "/signup",
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "home",
+      "to": "signup",
+      "via": "Go turbo",
+      "guard": null,
+      "url": "/signup",
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "home",
+      "to": "signup",
+      "via": "Go chrome",
+      "guard": null,
+      "url": "/signup",
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "signup",
+      "to": "home",
+      "via": "key Escape",
+      "guard": null,
+      "url": "/",
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "signup",
+      "to": "home",
+      "via": "N E O N  D R I V E  '90",
+      "guard": null,
+      "url": "/",
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "signup",
+      "to": "home",
+      "via": "Back to the road",
+      "guard": null,
+      "url": "/",
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "signup",
+      "to": "home",
+      "via": "Cancel",
+      "guard": null,
+      "url": "/",
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "signup",
+      "to": "home",
+      "via": "Start engine",
+      "guard": null,
+      "url": "/",
+      "params": null,
+      "missingParams": []
+    },
+    {
+      "from": "tour",
+      "to": "signup",
+      "via": "Join the crew",
+      "guard": null,
+      "url": "/signup",
+      "params": null,
+      "missingParams": []
+    }
+  ],
+  "flags": [
+    "blink",
+    "eq1",
+    "eq2",
+    "eq3",
+    "glow_pCrew",
+    "glow_pDrive",
+    "glow_pMix",
+    "going",
+    "menu",
+    "q1",
+    "q2",
+    "q3",
+    "starting",
+    "sun1",
+    "sun2",
+    "sun3",
+    "sun4"
+  ],
+  "checks": []
+}
