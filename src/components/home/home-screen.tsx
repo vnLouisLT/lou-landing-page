@@ -348,9 +348,12 @@ export function HomeScreen({ initialAnnual }: { initialAnnual: boolean }) {
             <Title
               testId="home.heroTitleGlitch"
               as="h1"
-              className="text-3xl text-accent sm:text-5xl"
+              className="relative text-3xl text-accent sm:text-5xl"
             >
-              R1DE 1NT0 TH3 N30N H0R1Z0N
+              <span aria-hidden="true" className="invisible select-none">
+                RIDE INTO THE NEON HORIZON
+              </span>
+              <span className="absolute inset-0">R1DE 1NT0 TH3 N30N H0R1Z0N</span>
             </Title>
           ) : (
             <Title
